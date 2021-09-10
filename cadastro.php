@@ -62,12 +62,11 @@
                                     <input name="cep" type="text" class="input is-large" placeholder="CEP" autofocus>
                                 </div>
                             </div>
-                            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          
-        </li>
+                            <div class="field">
+                                <div class="control">
+                                    <input name="orcamento" type="text" class="input is-large" placeholder="Orçamento" autofocus>
+                                </div>
+                            </div>
                             <div class="field">
                                 <div class="control">
                                     <input name="usuario" type="text" class="input is-large" placeholder="Usuário">
