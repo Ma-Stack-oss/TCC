@@ -36,7 +36,8 @@ session_start();
                         <form action="index.html" method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
+                                    <i class="bi bi-person"></i>
+                                    <input name="usuario"  name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
                                 </div>
                             </div>
 
