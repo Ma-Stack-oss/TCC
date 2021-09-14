@@ -55,10 +55,13 @@ session_start();
                                     <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
                                 </div>
                             </div>
-                            <div class="field">
-                                <a href="cadastro.php">Cadastrar</a>
+                            <div class="text-center p-t-136">
+                                <a class="txt2" href="cadastro.php">
+                                   Crie sua Conta
+                                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                </a>
                             </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>                
                         </form>
                     </div>
                 </div>
