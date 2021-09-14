@@ -14,12 +14,23 @@
    <title>Contas Logadas</title>
    <!--===============================================================================================-->  
     <link rel="icon" type="image/png" href="img/table.svg"/>
+    <!--===============================================================================================-->  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
  </head>
- <body>
+<body>
 <a href="painel.php">Inicio</a>
 
-<table class="table table-dark table-borderless" border='1'>
+<table class="table table-dark table-borderless" border='2'>
     <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Senha
+        </th>
         <th>
             Nome
         </th>
@@ -45,10 +56,16 @@
             CEP
         </th>
         <th>
-            Usuario
+            Orçamento
         </th>
         <th>
-            Senha
+            Data de Cadastro
+        </th>
+        <th>
+            <i class="bi bi-trash"></i>
+        </th>
+        <th>
+            2
         </th>
     </tr>
 
@@ -58,6 +75,15 @@ $qu=mysqli_query($conexao,$sq);
 while($f=  mysqli_fetch_assoc($qu)){
     ?>
     <tr>
+        <td>
+            <?php echo $f['usuario_id']?>
+        </td>
+        <td>
+            <?php echo $f['usuario']?>
+        </td>
+        <td>
+            <?php echo $f['senha']?>
+        </td>
         <td>
             <?php echo $f['nome']?>
         </td>
@@ -81,14 +107,28 @@ while($f=  mysqli_fetch_assoc($qu)){
         </td>
         <td>
             <?php echo $f['cep']?>
-        </td>
+        </td> 
         <td>
-            <?php echo $f['usuario']?>
-        </td>
+            <?php echo $f['orcamento']?>
+        </td> 
         <td>
-            <?php echo $f['senha']?>
-        </td>
+            <?php echo $f['data_cadastro']?>
+        </td> 
+        <td>
+            <a href="delete.php?del=<?php echo $f['usuario_id']?>
+">Delete</a>
+        </td> 
+        <td>
+            2
+        </td> 
     </tr>
     <?php
 }
 ?>
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ </body>
+</html>

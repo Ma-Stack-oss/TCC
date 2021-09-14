@@ -87,7 +87,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="viewall.php">
+                <a class="nav-link" href="../login/viewall.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tabelas Login</span></a>
             </li>
