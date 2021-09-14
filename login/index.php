@@ -1,88 +1,68 @@
 <?php
-    session_start();
-
-    if(isset($_SESSION["usuario"]) && is_array($_SESSION["usuario"])){
-        echo "<script>window.location = 'dashboard.php'</script>";
-    }
+session_start();
 ?>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Sistema de acesso</title>
-        <link rel="stylesheet" type="text/css" href="style/acesso.css" />
-        <script type="text/javascript" src="script/jquery.js"></script>
-        <script type="text/javascript" src="script/acesso.js"></script>
-    </head>
-    <body>
-        <header>Sistema de acesso</header>
+    
+<head>
+    <meta charset="utf-8">
+    <!--===============================================================================================-->  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--===============================================================================================-->  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->  
+    <title>Sistema de Login MVM</title>
+    <!--===============================================================================================-->  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!--===============================================================================================-->  
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="img/person-square.svg"/>
+</head>
 
-        <div id="subheader">
-            <ul>
-                <li><a href="javascript:void(0)">home</a></li>
-                <li><a href="javascript:void(0)">sobre</a></li>
-                <li><a href="javascript:void(0)">produtos</a></li>
-                <li><a href="javascript:void(0)">contato</a></li>
-            </ul>
-        </div>
+<body>
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">Sistema de Login</h3>
+                    <h3 class="title has-text-grey"><a href="https://youtube.com/canaltioficial" target="_blank">MVM</a></h3>
+                    <?php
+                    if(isset($_SESSION['nao_autenticado'])):
+                    ?>
+                    <div class="notification is-danger">
+                      <p>ERRO: Usuário ou senha inválidos.</p>
+                    </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['nao_autenticado']);
+                    ?>
+                    <div class="box">
+                        <form action="index.html" method="POST">
+                            <div class="field">
+                                <div class="control">
+                                    <input  name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
+                                </div>
+                            </div>
 
-        <div id="mensagem"></div>
-
-        <div id="formulario">
-            <form id="formularioLogin">
-                <span class="title">Acesse sua conta</span>
-
-                <div id="linha">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" />
+                            <div class="field">
+                                <div class="control">
+                                    <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <a href="cadastro.php">Cadastrar</a>
+                            </div>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+                        </form>
+                    </div>
                 </div>
-
-                <div id="linha" class="senha">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" />
-                </div>
-
-                <div id="button">
-                    <button id="btnEntrar">Entrar</button>
-                    <a href="javascript:void(0)" id="esqueciSenha">Esqueci minha senha</a>
-                </div>
-            </form>
-
-            <form id="formularioCadastro">
-                <span class="title">Crie sua conta</span>
-
-                <div id="linha">
-                    <label for="nomeCadastro">Nome</label>
-                    <input type="text" name="nomeCadastro" id="nomeCadastro" />
-                </div>
-
-                <div id="linha">
-                    <label for="emailCadastro">Email</label>
-                    <input type="text" name="emailCadastro" id="emailCadastro" />
-                </div>
-
-                <div id="linha">
-                    <label for="senhaCadastro">Senha</label>
-                    <input type="password" name="senhaCadastro" id="senhaCadastro" />
-                </div>
-
-                <div id="button">
-                    <button id="btnCadastrar">Cadastrar</button>
-                </div>
-            </form>
-
-            <div id="textoCadastro">
-                <span class="title">Não possui uma conta?</span>
-                <span class="subtitle">Crie uma conta agora para acessar todas as ferramentas. É de graça!</span>
-                <button id="btnCadastro" class="change">Cadastrar</button>
-            </div>
-
-            <div id="textoLogin">
-                <span class="title">Já possui uma conta?</span>
-                <span class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi, et iusto explicabo amet libero saepe quos impedit quisquam ut, ex tempora.</span>
-                <button id="btnLogin" class="change">Entrar</button>
             </div>
         </div>
+    </section>
+</body>
 
-        <footer>Sistema de acesso &copy; 2020</footer>
-    </body>
 </html>

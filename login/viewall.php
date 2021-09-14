@@ -1,11 +1,24 @@
 <?php
     include 'conexao.php';
-    include 'verifica_login.php';
 ?>
 
+<!doctype html>
+<html lang="pt">
+ <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- CSS only -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="   sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+   <!--===============================================================================================--> 
+   <title>Contas Logadas</title>
+   <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="img/table.svg"/>
+ </head>
+ <body>
 <a href="painel.php">Inicio</a>
 
-<table border='1'>
+<table class="table table-dark table-borderless" border='1'>
     <tr>
         <th>
             Nome
@@ -14,7 +27,7 @@
             Cpf/Cnpj
         </th>
         <th>
-            dtnascimento
+            Data Nascimento
         </th>
         <th>
             Endereco
@@ -29,7 +42,7 @@
             Cidade
         </th>
         <th>
-            Cep
+            CEP
         </th>
         <th>
             Usuario
