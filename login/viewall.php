@@ -65,7 +65,7 @@
             <i class="bi bi-trash"></i>
         </th>
         <th>
-            2
+            <i class="bi bi-pencil-fill"></i>
         </th>
     </tr>
 
@@ -115,11 +115,10 @@ while($f=  mysqli_fetch_assoc($qu)){
             <?php echo $f['data_cadastro']?>
         </td> 
         <td>
-            <a href="delete.php?del=<?php echo $f['usuario_id']?>
-">Delete</a>
+            <a href="delete.php?del=<?php echo $f['usuario_id']?>">Delete</a>
         </td> 
         <td>
-            2
+            <a href="edit.php?edit=<?php echo $f['usuario_id']?>">Editar</a>
         </td> 
     </tr>
     <?php
