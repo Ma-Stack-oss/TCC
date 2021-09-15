@@ -12,7 +12,7 @@
     <meta name="author" content="Cesar Szpak">
     <link rel="icon" href="imagens/favicon.ico">
 
-    <title>Celke - Login</title>
+    <title>ADM - Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">

@@ -43,7 +43,7 @@ session_start();
                     unset($_SESSION['nao_autenticado']);
                     ?>
                     <div class="box">
-                        <form action="../dashboard/index.php" method="POST">
+                        <form action="../site/index.php" method="POST">
                             <div class="field">
                                 <div class="control">
                                     <input  name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
@@ -58,6 +58,14 @@ session_start();
                             <div class="text-center p-t-136">
                                 <a class="txt2" href="cadastro.php">
                                    Crie sua Conta
+                                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-primary disabled" href="#">
+                                   -----------------------------
+                                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                </a>
+                                <a class="txt2" href="../nivel/index.php">
+                                   Acesso Ao Dashboard
                                     <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                                 </a>
                             </div>
