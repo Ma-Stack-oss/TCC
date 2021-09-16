@@ -14,5 +14,5 @@
 
 ?>
 
-<a href="viewall.php">Listagem de Clientes</a>
+<a href="../dashboard/index.php">voltar</a>
 <a href="login.php">Login de Clientes</a>

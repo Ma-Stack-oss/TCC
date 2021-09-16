@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <a href="login.php" class="fst-italic">Voltar</a>
-                            <a class="btn btn-primary disabled" href="#">
+                            <a class="btn btn-link  disabled" href="#">
                                    -----------------------------
                                 </a>
                                 <a class="txt2" href="../nivel/index.php">

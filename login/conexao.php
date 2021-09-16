@@ -1,7 +1,6 @@
-<?php
-define('HOST', '127.0.0.1');
-define('USUARIO', 'root');
-define('SENHA', '');
-define('DB', 'login');
+<?php 
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível conectar');
+session_start();
+//                       servidor , usuario, senha, nome do banco de dados
+$conexao=  mysqli_connect("localhost","root","","login")
+?>

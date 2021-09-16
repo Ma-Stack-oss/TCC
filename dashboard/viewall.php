@@ -1,3 +1,8 @@
+<?php
+    include 'conexao.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +27,10 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!--===============================================================================================-->  
     <link rel="icon" type="image/png" href="img/globe.svg"/>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="    sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--===============================================================================================-->  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 </head>
 
@@ -74,7 +83,7 @@
                         <h6 class="collapse-header">Login:</h6>
                         <a class="collapse-item" href="../login/login.php">Login</a>
                         <a class="collapse-item" href="../login/cadastro.php">Registrar</a>
-                        <a class="collapse-item" href="../site/index.php">Site MVM</a>
+                        ]<a class="collapse-item" href="../site/index.php">Site MVM</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -82,7 +91,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="viewall.php">
+                <a class="nav-link" href="../login/viewall.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Usuarios Conectados</span></a>
             </li>
@@ -230,7 +239,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Matheus Pereira</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><<?php echo $_SESSION['nome']; ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/pp.jfif    ">
                             </a>
@@ -357,88 +366,117 @@
                         </div>
                     </div>
 
-                    <!-- Content Row -->
+<table class="table table-dark table-borderless" border='2'>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Senha
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            Cpf/Cnpj
+        </th>
+        <th>
+            Data Nascimento
+        </th>
+        <th>
+            Endereco
+        </th>
+        <th>
+            Bairro
+        </th>
+        <th>
+            Telefone
+        </th>
+        <th>
+            Cidade
+        </th>
+        <th>
+            CEP
+        </th>
+        <th>
+            Orçamento
+        </th>
+        <th>
+            Data de Cadastro
+        </th>
+        <th>
+            <i class="bi bi-trash"></i>
+        </th>
+        <th>
+            <i class="bi bi-pencil-fill"></i>
+        </th>
+    </tr>
 
-                    <div class="row">
+<?php
+$sq="select * from usuario";
+$qu=mysqli_query($conexao,$sq);
+while($f=  mysqli_fetch_assoc($qu)){
+    ?>
+    <tr>
+        <td>
+            <?php echo $f['usuario_id']?>
+        </td>
+        <td>
+            <?php echo $f['usuario']?>
+        </td>
+        <td>
+            <?php echo $f['senha']?>
+        </td>
+        <td>
+            <?php echo $f['nome']?>
+        </td>
+        <td>
+            <?php echo $f['cpf']?>
+        </td>
+        <td>
+            <?php echo $f['dtnascimento']?>
+        </td>
+        <td>
+            <?php echo $f['endereco']?>
+        </td>
+        <td>
+            <?php echo $f['bairro']?>
+        </td>
+        <td>
+            <?php echo $f['telefone']?>
+        </td>
+        <td>
+            <?php echo $f['cidade']?>
+        </td>
+        <td>
+            <?php echo $f['cep']?>
+        </td> 
+        <td>
+            <?php echo $f['orcamento']?>
+        </td> 
+        <td>
+            <?php echo $f['data_cadastro']?>
+        </td> 
+        <td>
+            <a href="../login/delete.php?del=<?php echo $f['usuario_id']?>">Delete</a>
+        </td> ]
+        <td>
+            <a href="../login/edit.php?del=<?php echo $f['usuario_id']?>">Editar</a>
+        </td> 
+    </tr>
+    <?php
+}
+?>
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Privisões em 6 meses</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafico 1</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Exemplo 1
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Exemplo 2
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Exemplo 3
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
+
+
+
+                     <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">

@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -9,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="Cesar Szpak">
-    <link rel="icon" href="imagens/favicon.ico">
+    <link rel="icon" href="imagens/x-octagon-fill.svg">
 
     <title>ADM - Login</title>
 

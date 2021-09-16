@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
  </head>
 <body>
-<a href="painel.php">Inicio</a>
 
 <table class="table table-dark table-borderless" border='2'>
     <tr>
@@ -117,13 +116,19 @@ while($f=  mysqli_fetch_assoc($qu)){
         <td>
             <a href="delete.php?del=<?php echo $f['usuario_id']?>">Delete</a>
         </td> 
-        <td>
-            <a href="edit.php?edit=<?php echo $f['usuario_id']?>">Editar</a>
-        </td> 
     </tr>
     <?php
 }
 ?>
+
+<a href="painel.php">Inicio</a>
+ <a class="btn btn-link disabled" href="#">
+                                   -----------------------------
+                                   
+                                </a>
+<a href="../dashboard/index.php">Tela Adm</a>
+
+
    <!-- Optional JavaScript -->
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
