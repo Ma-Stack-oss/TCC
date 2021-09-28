@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body{
+	height: auto;
+}
+body{
+	background-image: url(../img/back9.png);
+	background-position: 0px 0px;
+	background-size: 120%;
+    
+}
+
+#login{
+	background-color: white;
+	margin-top: 100px;
+	margin-right: 23%;
+	margin-left: 23%;
+	border-radius: 2em;
+}
