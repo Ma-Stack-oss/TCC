@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body{
+	height: auto;
+}
+body{
+	background-image: url(../img/back17.png);
+	background-position: 0px 0px;
+	background-size: 120%;
+    
+}
+
+.navbar{
+	background-color: red;
+}
+
+#register{
+	background-color: white;
+	margin-top: 155px;
+	margin-right: 32%;
+	margin-left: 32%;
+	border-radius: 2em;
+}

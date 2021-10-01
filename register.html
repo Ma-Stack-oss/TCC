@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="css/register.css" media="screen" />
+
     <title>Registro MVM</title>
   </head>
   <body>
@@ -15,7 +17,7 @@
 
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Registrar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,30 +33,37 @@
 
 
 
-
+<div id="register">
       <form action="insert_data.php" method="post">
         <div class="form-group">
+          <center>
           <div class="col-md-4 mb-3">
             <label for="nameInputLabel">Nome:</label>
             <input type="text" class="form-control" id="nameInputLabel" name="name">
           </div>
         </div>
+        </center>
+        <center>
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="emailInputLabel">E-mail:</label>
             <input type="text" class="form-control" id="emailInputLabel" name = "email">
           </div>
         </div>
+        </center>
+        <center>
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="passwdInputLabel">Senha:</label>
             <input type="password" class="form-control" id="passwdInputLabel" name="passwd">
           </div>
         </div>
-        
-      
-        <button type="submit" class="btn btn-primary" name="submit">Entrar</button>
+        </center>
+        <center>
+          <button type="submit" class="btn btn-primary" name="submit">Registrar</button>
+        </center>
       </form>
+</div>
 
 
 

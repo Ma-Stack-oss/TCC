@@ -17,17 +17,12 @@
 
 
       <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/viewall.css" media="screen" />
 
     <title>Dashboard MVM</title>
   <body>
 
-  
   <?php session_start(); ?> 
-  <?php if ($_SESSION['name'] == 'admin'){
-    header("Location: admin.php");
-
-  }?>
 
    <div class="container-fluid display-table">
         <div class="row display-table-row">
@@ -52,9 +47,7 @@
                 </div>
             </div>
 
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Serviços</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -82,106 +75,58 @@
 </nav>
 
 
-<form method = "post" action="insert_order.php">
-    
-      <button type = "submit" class="btn btn-light btn-xs"  data-toggle="modal" data-target="#delete-modal">
-
-      <svg class="bi bi-file-earmark-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h5v-1H4a1 1 0 01-1-1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v2h1V6L9 1z"/>
-        <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-        <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-      </svg>
-
-      Inserir Dados
-
-
-      </button> 
-</form>
-
-
-
 <?php
 $conexao = mysqli_connect("localhost","root","","PurchasesDB") or print (mysqli_error());
-// test if admin or normal customer to redirect a suitable page.
-
-
-if (!empty($_POST["dataForRemoving"])){
-
-  $removingRow = $_POST["dataForRemoving"];
-  $query_for_removing = "DELETE FROM orders WHERE id=$removingRow";
-  mysqli_query($conexao,$query_for_removing);
-
-}
-
+ 
  
 $id = $_SESSION['id'];
 
-
-
-$query = "SELECT id,description,amount, customer_id FROM orders WHERE customer_id =$id";
+$query = "SELECT *  FROM customers ORDER BY name";
 
 $resultado = mysqli_query($conexao,$query);
 
 ?>
 
-
-<table class="table">
-  <thead>
+<table class="table table-striped table-dark" id="table" border='5'>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Descrição:</th>
-      <th scope="col">Preço:</th>
-      <th scope="col"></i><th>
-      <th scope="col"></i><th>
-    
-
+      <th>
+            <b><i>ID</i></b>
+        </th>
+        <th>
+            <b><i>Nome</i></b>
+        </th>
+        <th>
+            <b><i>Usuario</i></b>
+        </th>
+        <th>
+            <b><i>Senha</i></b>
+        </th>
     </tr>
-  </thead>
-  <tbody>
 
 <?php
-
-while($linha = mysqli_fetch_array($resultado)){
-    echo "<tr> <td>".$linha['id']."</td>
-    <td>".$linha['description']."</td>
-    <td>R$".$linha['amount'].",00</td>";
+$sq="select * from customers";
+$qu=mysqli_query($conexao,$sq);
+while($f=  mysqli_fetch_assoc($qu)){
     ?>
-
-    <td>
-    <form method = "post" action="update_order.php">
-    <input type = "hidden" id="inputHidden" name="dataForUpdating" value=<?php echo $linha['id']; ?> >  
-      <button type = "submit" class="btn btn-info btn-xs" ><i class="bi bi-pen-fill"></button> 
-    </td>
-    </form>  
-
-
-    <td>
-    <form method = "post" action="home.php">
-    <input type = "hidden" id="inputHidden" name="dataForRemoving" value=<?php echo $linha['id']; ?> >  
-      <button type = "submit" class="btn btn-danger btn-xs"  ><i class="bi bi-trash"></button> 
-    </td></tr>
-    </form>
-
-
-
-  
-    <?php
-}
-
-?>
-
-
-    
-  </tbody>
-</table>
-
-
-
+    <tr>
+        <td>
+            <?php echo $f['id']?>
+        </td>
+        <td>
+            <?php echo $f['name']?>
+        </td>
+        <td>
+            <?php echo $f['email']?>
+        </td>
+        <td>
+            <?php echo $f['passwd']?>
+        </td>
+    </tr>
 <?php
-mysqli_close($conexao);
+}
 ?>
 
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
