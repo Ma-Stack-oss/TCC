@@ -37,7 +37,7 @@
                         <li class="active"><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li><a href="admin.php"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
                         <li><a href="statistics.php"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
+                        <li><a href="pdf.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Enviar PDF</span></a></li>
                         <li><a href="viewall.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                         <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
                         <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
@@ -101,6 +101,12 @@ $resultado = mysqli_query($conexao,$query);
         <th>
             <b><i>Senha</i></b>
         </th>
+        <th>
+            <b><i>Editar</i></b>
+        </th>
+        <th>
+            <b><i>Excluir</i></b>
+        </th>
     </tr>
 
 <?php
@@ -121,6 +127,13 @@ while($f=  mysqli_fetch_assoc($qu)){
         <td>
             <?php echo $f['passwd']?>
         </td>
+        <td>
+             <a href="delete.php"><i class="bi bi-pen-fill"></a>
+        </td>
+        <td>
+            <a href="delete.php"><i class="bi bi-trash"></a>
+        </td>
+
     </tr>
 <?php
 }

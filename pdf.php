@@ -3,20 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+
+      <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
+      <title>Relatório PDF</title>
 </head>
 <body class="hold-transition sidebar-mini">
+
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                <div class="logo">
+                    <a hef="home.html"><img src="img/logo4.png"  height="150" width="10" class="hidden-xs hidden-sm">
+                  
+                    </a>
+                </div>
+                <div class="navi">
+                    <ul>
+                        <li class="active"><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a href="admin.php"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
+                        <li><a href="statistics.php"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
+                        <li><a href=pdf.php><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Enviar PDF</span></a></li>
+                        <li><a href="viewall.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
+                        <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
 
     <?php
 
@@ -38,7 +70,7 @@
                 <h1>Relatórios</h1>
             </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
         </section>
 
         <section class="content">
@@ -57,7 +89,7 @@
                                 
                             ?>
                             
-                            <form  id="form1" name="form1" method="post" enctype="multipart/form-data" action="pdfp.php">
+                            <form  id="form1" name="form1" method="post" enctype="multipart/form-data" action="pdf_servico.php">
                                 
 
                                 <div class="card-footer">
@@ -67,9 +99,40 @@
 
                             </form>
                         </div>
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Relatório dos Usuarios</h3>
+                            </div>
+                            
+                            <?php  
+                                
+                                $sql="select * from customers ";
+                                $resultado = mysqli_query($con, $sql);
+                                
+                            ?>
+                            
+                            <form  id="form1" name="form1" method="post" enctype="multipart/form-data" action="pdf_usuarios.php">
+                                
+
+                                <div class="card-footer">
+                                    
+                                    <input type="submit" class="btn btn-primary" name="Pesquisar" id="Pesquisar" value="Pesquisar"/>
+                                </div>
+
+                            </form>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>

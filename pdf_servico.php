@@ -14,9 +14,9 @@ $pdf->ln(15);
 
 
 $pdf->SetFont('Arial','B',12);
-$pdf->Cell(70, 7,'description',1,0,"C");
-$pdf->Cell(70, 7,'amount',1,0,"C");
-$pdf->Cell(70, 7,'customer_id',1,0,"C");
+$pdf->Cell(70, 7,'Orçamento',1,0,"C");
+$pdf->Cell(70, 7,'Preço',1,0,"C");
+$pdf->Cell(70, 7,'ID_Responsavel',1,0,"C");
 $pdf->ln();
 
 
