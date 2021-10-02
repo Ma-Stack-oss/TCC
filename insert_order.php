@@ -37,7 +37,7 @@
                     <ul>
                         <li class="active"><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li><a href="admin.php"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
+                        <li><a href="statistics.php"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
                         <li><a href="viewall.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                         <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
@@ -51,7 +51,7 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Serviços</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@ if (!empty($_POST['description']) && !empty($_POST['amount'])){
     $amount = $_POST['amount'];
     $customer_id = $_SESSION['id'];
        
-    $conexao = mysqli_connect("localhost","root","","PurchasesDB") or print (mysqli_error());
+    $conexao = mysqli_connect("localhost","root","","purchasesdb") or print (mysqli_error());
 
     $query = "INSERT INTO orders (description,amount,customer_id) VALUES ('$description','$amount', '$customer_id')";
 
@@ -111,7 +111,7 @@ if (!empty($_POST['description']) && !empty($_POST['amount'])){
 
 
 
-<form action="insert_order.php" method="post">
+<form action="home.php" method="POST">
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="nameInputLabel">Observações:</label>
