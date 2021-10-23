@@ -1,3 +1,4 @@
+   
 <?php
 define('FPDF_FONTPATH', 'font/');
 include 'fpdf/fpdf.php';
@@ -9,13 +10,13 @@ $busca = mysqli_query($con, $sql);
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-$pdf->Cell(140,10,('Todos Os Serviços:'),0,0,"C");
+$pdf->Cell(140,10,('Todos Os Servicos:'),0,0,"C");
 $pdf->ln(15);
 
 
 $pdf->SetFont('Arial','B',12);
-$pdf->Cell(70, 7,'Orçamento',1,0,"C");
-$pdf->Cell(70, 7,'Preço',1,0,"C");
+$pdf->Cell(70, 7,'Orcamento',1,0,"C");
+$pdf->Cell(70, 7,'Preco',1,0,"C");
 $pdf->Cell(70, 7,'ID_Responsavel',1,0,"C");
 $pdf->ln();
 

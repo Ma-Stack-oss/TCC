@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
-
-      <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
+    <link rel="shortcut icon" type="imagex/png" href="./img/icon2.svg">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />
 
     <title>ADM-Logins</title>
   </head>
@@ -28,8 +25,8 @@
    <div class="container-fluid display-table">
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-                <div class="logo">
-                    <a hef="home.html"><img src="img/logo4.png"  height="150" width="10" class="hidden-xs hidden-sm">
+                 <div class="logo">
+                    <a hef="home.html"><img src="img/logo7.png" height="180" width="auto" class="hidden-xs hidden-sm">
                   
                     </a>
                 </div>
@@ -38,6 +35,7 @@
                         <li class="active"><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li><a href="admin.php"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
                         <li><a href="statistics.php"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
+                        <li><a href=pdf.php><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Enviar PDF</span></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
                         <li><a href="viewall.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                         <li><a href="#"></i><span class="hidden-xs hidden-sm"></span></a></li>
